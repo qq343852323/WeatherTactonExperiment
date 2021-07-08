@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/start_dest">
+
+    <fragment
+        android:id="@+id/start_dest"
+        android:name="com.example.weathertactonexperiment.StartFragment"
+        android:label="start_fragment"
+        tools:layout="@layout/start_fragment" />
+    <fragment
+        android:id="@+id/estimation1_dest"
+        android:name="com.example.weathertactonexperiment.EstimationFragment1"
+        android:label="estimation_fragment1"
+        tools:layout="@layout/estimation_fragment1" />
+    <fragment
+        android:id="@+id/estimation2_dest"
+        android:name="com.example.weathertactonexperiment.EstimationFragment2"
+        android:label="estimation_fragment2"
+        tools:layout="@layout/estimation_fragment2" />
+    <fragment
+        android:id="@+id/estimation3_dest"
+        android:name="com.example.weathertactonexperiment.EstimationFragment3"
+        android:label="estimation_fragment3"
+        tools:layout="@layout/estimation_fragment3" />
+    <fragment
+        android:id="@+id/end_dest"
+        android:name="com.example.weathertactonexperiment.EndFragment"
+        android:label="end_fragment"
+        tools:layout="@layout/end_fragment" />
+</navigation>
