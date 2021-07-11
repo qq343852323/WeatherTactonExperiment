@@ -28,24 +28,36 @@ class EstimationFragment3 : Fragment() {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz1000ms)
             HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
             mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
         }
 
         view.findViewById<View>(R.id.e3b2).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz100ms)
             HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
             mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
         }
 
         view.findViewById<View>(R.id.e3b3).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz500ms)
             HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
             mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
         }
 
         view.findViewById<View>(R.id.estimation3_submit_button).setOnClickListener {
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
             val editText = view.findViewById<EditText>(R.id.estimation3_editTextNumber)
-            File(downloadFolder?.path + File.separator + "test2.txt").appendText(
+            File(downloadFolder?.path + File.separator + "test3.txt").appendText(
                 editText.text.toString() + "\n"
             )
         }

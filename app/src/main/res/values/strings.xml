@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WeatherTactonExperiment</string>
+    <string-array name="levels_array">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
 </resources>

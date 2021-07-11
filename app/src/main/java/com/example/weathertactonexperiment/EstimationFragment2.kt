@@ -28,18 +28,30 @@ class EstimationFragment2 : Fragment() {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz500ms)
             HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
             mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
         }
 
         view.findViewById<View>(R.id.e2b2).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz100ms)
             HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
             mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
         }
 
         view.findViewById<View>(R.id.e2b3).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz1000ms)
             HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
             mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
         }
 
         view.findViewById<View>(R.id.estimation2_submit_button).setOnClickListener {
