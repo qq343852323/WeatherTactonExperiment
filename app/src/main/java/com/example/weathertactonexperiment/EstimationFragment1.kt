@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import org.w3c.dom.Text
 import java.io.File
 
@@ -35,8 +36,8 @@ class EstimationFragment1 : Fragment() {
             hapticGenerator.enabled = true
             mediaPlayer.start()
             mediaPlayer.setOnCompletionListener {
-//                hapticGenerator.close()
-//                hapticGenerator.release()
+                hapticGenerator.release()
+                hapticGenerator.close()
                 mediaPlayer?.release()
                 mediaPlayer = null
             }
@@ -48,8 +49,8 @@ class EstimationFragment1 : Fragment() {
             hapticGenerator.enabled = true
             mediaPlayer.start()
             mediaPlayer.setOnCompletionListener {
-//                hapticGenerator.close()
-//                hapticGenerator.release()
+                hapticGenerator.release()
+                hapticGenerator.close()
                 mediaPlayer?.release()
                 mediaPlayer = null
             }
@@ -61,8 +62,8 @@ class EstimationFragment1 : Fragment() {
             hapticGenerator.enabled = true
             mediaPlayer.start()
             mediaPlayer.setOnCompletionListener {
-//                hapticGenerator.close()
-//                hapticGenerator.release()
+                hapticGenerator.release()
+                hapticGenerator.close()
                 mediaPlayer?.release()
                 mediaPlayer = null
             }
@@ -111,10 +112,25 @@ class EstimationFragment1 : Fragment() {
 
         view.findViewById<View>(R.id.estimation1_submit_button).setOnClickListener {
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
-            val editText = view.findViewById<EditText>(R.id.estimation1_editTextNumber)
-            File(downloadFolder?.path + File.separator + "test10.txt").appendText(
-                editText.text.toString() + "\n"
-            )
+            val editText1 = view.findViewById<EditText>(R.id.estimation1_editTextNumber1)
+            val editText2 = view.findViewById<EditText>(R.id.estimation1_editTextNumber2)
+            val editText3 = view.findViewById<EditText>(R.id.estimation1_editTextNumber3)
+
+            if(!(editText1.text.toString().equals("1") || editText1.text.toString().equals("2") || editText1.text.toString().equals("3"))
+                || !(editText2.text.toString().equals("1") || editText2.text.toString().equals("2") || editText2.text.toString().equals("3"))
+                || !(editText3.text.toString().equals("1") || editText3.text.toString().equals("2") || editText3.text.toString().equals("3"))
+                || editText1.text.toString().equals(editText2.text.toString())
+                || editText1.text.toString().equals(editText3.text.toString())
+                || editText2.text.toString().equals(editText3.text.toString())){
+                view.findViewById<TextView>(R.id.warnmsg).text = "Invalid input"
+            }else{
+                File(downloadFolder?.path + File.separator + "test10.txt").appendText(
+                    editText1.text.toString() + "-" + editText2.text.toString() + "-" + editText3.text.toString() + "\n"
+                )
+                findNavController().navigate(R.id.estimation2_dest)
+            }
+
+
 //            if(!editText.text.toString().equals("123") &&
 //                !editText.text.toString().equals("132") &&
 //                !editText.text.toString().equals("213") &&
@@ -130,8 +146,11 @@ class EstimationFragment1 : Fragment() {
 //            }
         }
 
-        view.findViewById<View>(R.id.estimation1_next_button).setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.estimation2_dest, null)
-        )
+//        view.findViewById<View>(R.id.estimation1_next_button).setOnClickListener (
+//            Navigation.createNavigateOnClickListener(R.id.estimation2_dest, null)
+//        )
+        view.findViewById<View>(R.id.estimation1_next_button).setOnClickListener {
+            findNavController().navigate(R.id.estimation2_dest)
+        }
     }
 }

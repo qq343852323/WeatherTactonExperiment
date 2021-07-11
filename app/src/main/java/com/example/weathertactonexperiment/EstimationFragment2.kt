@@ -26,9 +26,12 @@ class EstimationFragment2 : Fragment() {
 
         view.findViewById<View>(R.id.e2b1).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz500ms)
-            HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
+            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+            hapticGenerator.enabled = true
             mediaPlayer.start()
             mediaPlayer.setOnCompletionListener {
+                hapticGenerator.release()
+                hapticGenerator.close()
                 mediaPlayer?.release()
                 mediaPlayer = null
             }
@@ -36,9 +39,12 @@ class EstimationFragment2 : Fragment() {
 
         view.findViewById<View>(R.id.e2b2).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz100ms)
-            HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
+            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+            hapticGenerator.enabled = true
             mediaPlayer.start()
             mediaPlayer.setOnCompletionListener {
+                hapticGenerator.release()
+                hapticGenerator.close()
                 mediaPlayer?.release()
                 mediaPlayer = null
             }
@@ -46,9 +52,12 @@ class EstimationFragment2 : Fragment() {
 
         view.findViewById<View>(R.id.e2b3).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz1000ms)
-            HapticGenerator.create(mediaPlayer.audioSessionId).enabled = true
+            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+            hapticGenerator.enabled = true
             mediaPlayer.start()
             mediaPlayer.setOnCompletionListener {
+                hapticGenerator.release()
+                hapticGenerator.close()
                 mediaPlayer?.release()
                 mediaPlayer = null
             }
