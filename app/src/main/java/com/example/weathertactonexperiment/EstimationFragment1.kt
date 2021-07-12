@@ -8,7 +8,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -112,9 +114,13 @@ class EstimationFragment1 : Fragment() {
 
         view.findViewById<View>(R.id.estimation1_submit_button).setOnClickListener {
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
-            val editText1 = view.findViewById<EditText>(R.id.estimation1_editTextNumber1)
-            val editText2 = view.findViewById<EditText>(R.id.estimation1_editTextNumber2)
-            val editText3 = view.findViewById<EditText>(R.id.estimation1_editTextNumber3)
+//            val editText1 = view.findViewById<EditText>(R.id.estimation1_editTextNumber1)
+//            val editText2 = view.findViewById<EditText>(R.id.estimation1_editTextNumber2)
+//            val editText3 = view.findViewById<EditText>(R.id.estimation1_editTextNumber3)
+
+            val editText1 = view.findViewById<EditText>(R.id.e1_editTextNumber1)
+            val editText2 = view.findViewById<EditText>(R.id.e1_editTextNumber2)
+            val editText3 = view.findViewById<EditText>(R.id.e1_editTextNumber3)
 
             if(!(editText1.text.toString().equals("1") || editText1.text.toString().equals("2") || editText1.text.toString().equals("3"))
                 || !(editText2.text.toString().equals("1") || editText2.text.toString().equals("2") || editText2.text.toString().equals("3"))
