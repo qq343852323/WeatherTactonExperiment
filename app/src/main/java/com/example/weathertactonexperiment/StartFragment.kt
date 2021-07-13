@@ -26,9 +26,6 @@ class StartFragment : Fragment() {
         File(downloadFolder?.path + File.separator + "random.txt").appendText(
             "1" + "\n" + "2" + "\n" + "3" + "\n"
         )
-//        for(i in 2..1){
-//            File(downloadFolder?.path + File.separator + "random.txt").appendText("456")
-//        }
 
         val button = view.findViewById<Button>(R.id.start_button)
         button?.setOnClickListener(

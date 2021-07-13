@@ -45,15 +45,6 @@ class EstimationFragment1 : Fragment() {
 //            Navigation.createNavigateOnClickListener(R.id.end_dest, null)
 //        }
         var lines = File(downloadFolder?.path + File.separator + "random.txt").readLines()
-//        if(lines.size == 2){
-//            view.findViewById<TextView>(R.id.e1_title).text = "123"
-//        }
-//        if(lines.size == 3){
-//            view.findViewById<TextView>(R.id.e1_title).text = "Wind"
-//        }
-//        if(lines.size == 4){
-//            view.findViewById<TextView>(R.id.e1_title).text = "Rain"
-//        }
         var num = lines.get(0).toInt()
         File(downloadFolder?.path + File.separator + "random.txt").delete()
         for(i in 2..lines.size){
@@ -152,9 +143,6 @@ class EstimationFragment1 : Fragment() {
 
         view.findViewById<View>(R.id.e1_submit_button).setOnClickListener {
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
-//            val editText1 = view.findViewById<EditText>(R.id.estimation1_editTextNumber1)
-//            val editText2 = view.findViewById<EditText>(R.id.estimation1_editTextNumber2)
-//            val editText3 = view.findViewById<EditText>(R.id.estimation1_editTextNumber3)
 
             val editText1 = view.findViewById<EditText>(R.id.e1_editTextNumber1)
             val editText2 = view.findViewById<EditText>(R.id.e1_editTextNumber2)
@@ -177,21 +165,6 @@ class EstimationFragment1 : Fragment() {
                     findNavController().navigate(R.id.estimation1_dest)
                 }
             }
-
-
-//            if(!editText.text.toString().equals("123") &&
-//                !editText.text.toString().equals("132") &&
-//                !editText.text.toString().equals("213") &&
-//                !editText.text.toString().equals("231") &&
-//                !editText.text.toString().equals("312") &&
-//                !editText.text.toString().equals("321")){
-//                view.findViewById<TextView>(R.id.warnmsg).text = "Invalid input"
-//            }else{
-//                view.findViewById<TextView>(R.id.warnmsg).text = "Thanks for your input"
-//                File(downloadFolder?.path + File.separator + "test10.txt").appendText(
-//                    editText.text.toString() + "\n"
-//                )
-//            }
         }
 
 
