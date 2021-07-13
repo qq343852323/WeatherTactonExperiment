@@ -26,11 +26,49 @@ class EstimationFragment1 : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.estimation_fragment1, container, false)
+//        val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+//        if(!File(downloadFolder?.path + File.separator + "random.txt").exists()){
+//            return inflater.inflate(R.layout.end_fragment, container, false)
+//        }else{
+//            return inflater.inflate(R.layout.estimation_fragment1, container, false)
+//        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+//        if(!File(downloadFolder?.path + File.separator + "random.txt").exists()){
+//            findNavController().navigate(R.id.end_dest)
+//            Navigation.createNavigateOnClickListener(R.id.end_dest, null)
+//        }
+        var lines = File(downloadFolder?.path + File.separator + "random.txt").readLines()
+//        if(lines.size == 2){
+//            view.findViewById<TextView>(R.id.e1_title).text = "123"
+//        }
+//        if(lines.size == 3){
+//            view.findViewById<TextView>(R.id.e1_title).text = "Wind"
+//        }
+//        if(lines.size == 4){
+//            view.findViewById<TextView>(R.id.e1_title).text = "Rain"
+//        }
+        var num = lines.get(0).toInt()
+        File(downloadFolder?.path + File.separator + "random.txt").delete()
+        for(i in 2..lines.size){
+            File(downloadFolder?.path + File.separator + "random.txt").appendText(lines.get(i-1) + "\n")
+        }
+
+        if(num == 1){
+            view.findViewById<TextView>(R.id.e1_title).text = "Temperature"
+        }
+        if(num == 2){
+            view.findViewById<TextView>(R.id.e1_title).text = "Wind"
+        }
+        if(num == 3){
+            view.findViewById<TextView>(R.id.e1_title).text = "Rain"
+        }
 
         view.findViewById<View>(R.id.e1b1).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz100ms)
@@ -112,7 +150,7 @@ class EstimationFragment1 : Fragment() {
 //            }
 //        }
 
-        view.findViewById<View>(R.id.estimation1_submit_button).setOnClickListener {
+        view.findViewById<View>(R.id.e1_submit_button).setOnClickListener {
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 //            val editText1 = view.findViewById<EditText>(R.id.estimation1_editTextNumber1)
 //            val editText2 = view.findViewById<EditText>(R.id.estimation1_editTextNumber2)
@@ -128,12 +166,16 @@ class EstimationFragment1 : Fragment() {
                 || editText1.text.toString().equals(editText2.text.toString())
                 || editText1.text.toString().equals(editText3.text.toString())
                 || editText2.text.toString().equals(editText3.text.toString())){
-                view.findViewById<TextView>(R.id.warnmsg).text = "Invalid input"
+                view.findViewById<TextView>(R.id.e1_warnmsg).text = "Invalid input"
             }else{
                 File(downloadFolder?.path + File.separator + "test10.txt").appendText(
                     editText1.text.toString() + "-" + editText2.text.toString() + "-" + editText3.text.toString() + "\n"
                 )
-                findNavController().navigate(R.id.estimation2_dest)
+                if(lines.size == 1){
+                    findNavController().navigate(R.id.end_dest)
+                }else{
+                    findNavController().navigate(R.id.estimation1_dest)
+                }
             }
 
 
@@ -152,11 +194,13 @@ class EstimationFragment1 : Fragment() {
 //            }
         }
 
+
+
 //        view.findViewById<View>(R.id.estimation1_next_button).setOnClickListener (
 //            Navigation.createNavigateOnClickListener(R.id.estimation2_dest, null)
 //        )
-        view.findViewById<View>(R.id.estimation1_next_button).setOnClickListener {
-            findNavController().navigate(R.id.estimation2_dest)
-        }
+//        view.findViewById<View>(R.id.estimation1_next_button).setOnClickListener {
+//            findNavController().navigate(R.id.estimation2_dest)
+//        }
     }
 }

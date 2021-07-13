@@ -1,12 +1,14 @@
 package com.example.weathertactonexperiment
 
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import java.io.File
 
 class StartFragment : Fragment() {
     override fun onCreateView(
@@ -19,6 +21,14 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+        File(downloadFolder?.path + File.separator + "random.txt").appendText(
+            "1" + "\n" + "2" + "\n" + "3" + "\n"
+        )
+//        for(i in 2..1){
+//            File(downloadFolder?.path + File.separator + "random.txt").appendText("456")
+//        }
 
         val button = view.findViewById<Button>(R.id.start_button)
         button?.setOnClickListener(

@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/e1_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Temperature"
@@ -42,64 +42,6 @@
         android:soundEffectsEnabled="false"
         android:text="vibration3" />
 
-    <TextView
-        android:id="@+id/e1textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/temperature_high" />
-
-    <EditText
-        android:id="@+id/estimation1_editTextNumber1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/e1textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/temperature_medium" />
-
-    <EditText
-        android:id="@+id/estimation1_editTextNumber2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/e1textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/temperature_low" />
-
-    <EditText
-        android:id="@+id/estimation1_editTextNumber3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/warnmsg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#F10101"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/estimation1_submit_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="submit and next" />
-
-    <Button
-        android:id="@+id/estimation1_next_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="next" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -110,7 +52,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/wind_high" />
+            android:text="@string/temperature_high" />
 
         <EditText
             android:id="@+id/e1_editTextNumber1"
@@ -131,7 +73,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/wind_medium" />
+            android:text="@string/temperature_medium" />
 
         <EditText
             android:id="@+id/e1_editTextNumber2"
@@ -152,7 +94,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/wind_low" />
+            android:text="@string/temperature_low" />
 
         <EditText
             android:id="@+id/e1_editTextNumber3"
@@ -164,6 +106,19 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/e1_warnmsg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="#F10101"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/e1_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit and next" />
 
 
 </LinearLayout>
