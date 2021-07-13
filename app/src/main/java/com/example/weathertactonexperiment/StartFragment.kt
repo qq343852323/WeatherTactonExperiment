@@ -23,6 +23,9 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+        File(downloadFolder?.path + File.separator + "data.txt").appendText(
+            "participant1" + "\n"
+        )
         File(downloadFolder?.path + File.separator + "random.txt").appendText(
             "1" + "\n" + "2" + "\n" + "3" + "\n"
         )

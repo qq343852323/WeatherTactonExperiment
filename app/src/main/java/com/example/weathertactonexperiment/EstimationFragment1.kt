@@ -156,7 +156,7 @@ class EstimationFragment1 : Fragment() {
                 || editText2.text.toString().equals(editText3.text.toString())){
                 view.findViewById<TextView>(R.id.e1_warnmsg).text = "Invalid input"
             }else{
-                File(downloadFolder?.path + File.separator + "test10.txt").appendText(
+                File(downloadFolder?.path + File.separator + "data.txt").appendText(
                     editText1.text.toString() + "-" + editText2.text.toString() + "-" + editText3.text.toString() + "\n"
                 )
                 if(lines.size == 1){
