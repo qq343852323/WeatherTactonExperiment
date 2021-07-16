@@ -1,5 +1,6 @@
 package com.example.weathertactonexperiment
 
+import android.content.Context
 import android.media.MediaPlayer
 import android.media.audiofx.HapticGenerator
 import android.os.Bundle
@@ -62,7 +63,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b1).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz100ms)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hzminus20db)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -75,7 +76,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b2).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz500ms)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz0db)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -88,7 +89,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b3).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz1000ms)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz20db)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -142,6 +143,9 @@ class EstimationFragment1 : Fragment() {
 //        }
 
         view.findViewById<View>(R.id.e1_submit_button).setOnClickListener {
+            val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 
             val editText1 = view.findViewById<EditText>(R.id.e1_editTextNumber1)
