@@ -63,7 +63,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b1).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hzminus20db)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.audacity_200hz_amp0_5_1000ms)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -76,7 +76,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b2).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz0db)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.audacity_300hz_amp0_5_1000ms)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -89,7 +89,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b3).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg200hz20db)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.audacity_300hz_amp1_1000ms)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
