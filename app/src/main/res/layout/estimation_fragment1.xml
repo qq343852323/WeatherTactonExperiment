@@ -42,77 +42,108 @@
         android:soundEffectsEnabled="false"
         android:text="vibration3" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/e1i1"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/temperature_high" />
-
-        <EditText
-            android:id="@+id/e1_editTextNumber1"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/e1i2"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/temperature_medium" />
-
-        <EditText
-            android:id="@+id/e1_editTextNumber2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/e1i3"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/temperature_low" />
-
-        <EditText
-            android:id="@+id/e1_editTextNumber3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number" />
-
-
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/e1_warnmsg"
+        android:id="@+id/textView_high"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:textColor="#F10101"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content"
+        android:text="@string/high_temperature"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_high"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_high_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/radio_button_high_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/radio_button_high_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/medium_temperature"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_medium_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/radio_button_medium_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/radio_button_medium_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView_low"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/low_temperature"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_low"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_low_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/radio_button_low_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/radio_button_low_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/e1_submit_button"
@@ -120,5 +151,11 @@
         android:layout_height="wrap_content"
         android:text="submit and next" />
 
+    <TextView
+        android:id="@+id/e1_warnmsg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="#F10101"
+        android:textSize="20sp" />
 
 </LinearLayout>
