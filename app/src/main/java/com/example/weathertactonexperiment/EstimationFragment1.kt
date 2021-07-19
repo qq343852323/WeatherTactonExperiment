@@ -1,24 +1,19 @@
 package com.example.weathertactonexperiment
 
-import android.content.Context
-import android.media.MediaPlayer
+import android.media.*
 import android.media.audiofx.HapticGenerator
 import android.os.Bundle
 import android.os.Environment
-import android.os.VibrationEffect
 import android.os.Vibrator
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import org.w3c.dom.Text
 import java.io.File
+import java.io.InputStream
+
 
 class EstimationFragment1 : Fragment() {
 
@@ -53,13 +48,34 @@ class EstimationFragment1 : Fragment() {
         val WAVEFORM_AMPLITUDE_1 = intArrayOf(64)
         val WAVEFORM_AMPLITUDE_2 = intArrayOf(128)
         val WAVEFORM_AMPLITUDE_3 = intArrayOf(255)
-        val WAVEFORM_TIMINGS_1 = longArrayOf(50, 15, 50, 15, 50, 15, 50, 15, 50, 15)
-        val WAVEFORM_TIMINGS_2 = longArrayOf(50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
-        val WAVEFORM_TIMINGS_3 = longArrayOf(50, 800, 50, 800, 50, 800, 50, 800, 50, 800)
+        val WAVEFORM_TIMINGS_1 = longArrayOf(
+            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+            50, 15, 50, 15, 50, 15, 50, 15, 50, 15, 50)
+        val WAVEFORM_TIMINGS_2 = longArrayOf(
+            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+            50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
+        val WAVEFORM_TIMINGS_3 = longArrayOf(50, 800, 50, 800, 50, 250)
         val WAVEFORM_TIMINGS_4 = longArrayOf(50, 100, 50, 100, 50, 100, 50, 100, 50, 100)
         val WAVEFORM_TIMINGS_5 = longArrayOf(50, 200, 50, 200, 50, 200, 50, 200, 50, 200)
-        val WAVEFORM_AMPLITUDES_1 = intArrayOf(128, 0, 128, 0, 128, 0, 128, 0, 128, 0)
-        val WAVEFORM_AMPLITUDES_2 = intArrayOf(255, 0, 255, 0, 255, 0, 255, 0, 255, 0)
+        val WAVEFORM_AMPLITUDES_1 = intArrayOf(
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0, 128)
+        val WAVEFORM_AMPLITUDES_2 = intArrayOf(
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+            128, 0, 128, 0, 128, 0, 128, 0, 128, 0)
+        val WAVEFORM_AMPLITUDES_3 = intArrayOf(128, 0, 128, 0, 128, 0)
 
         val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 //        if(!File(downloadFolder?.path + File.separator + "random.txt").exists()){
@@ -84,49 +100,85 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b1).setOnClickListener {
-//            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.audacity_200hz_amp0_5_1000ms)
-//            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
-//            hapticGenerator.enabled = true
-//            mediaPlayer.start()
-//            mediaPlayer.setOnCompletionListener {
-//                hapticGenerator.release()
-//                hapticGenerator.close()
-//                mediaPlayer?.release()
-//                mediaPlayer = null
+//            val minBufferSize = AudioTrack.getMinBufferSize(
+//                44100, AudioFormat.CHANNEL_OUT_MONO,
+//                AudioFormat.ENCODING_PCM_16BIT
+//            )
+//
+//            val player = AudioTrack.Builder()
+//                .setAudioAttributes(
+//                    AudioAttributes.Builder()
+//                        .setUsage(AudioAttributes.USAGE_ALARM)
+//                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+//                        .build()
+//                )
+//                .setAudioFormat(
+//                    AudioFormat.Builder()
+//                        .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+//                        .setSampleRate(44100)
+//                        .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
+//                        .build()
+//                )
+//                .setBufferSizeInBytes(minBufferSize)
+//                .build()
+//
+//            player.play()
+//            var i = 0
+//            val bufferSize = 512
+//            var buffer = ByteArray(bufferSize)
+//            val inputStream: InputStream = requireContext().resources.openRawResource(R.raw.am0hz)
+//            i = inputStream.read(buffer)
+//            while(i != -1){
+//                player.write(buffer, 0, i)
+//                i = inputStream.read(buffer)
 //            }
+//            inputStream.close()
 
-            vibrator?.vibrate(
-                VibrationEffect.createWaveform(WAVEFORM_DURATION_1, WAVEFORM_AMPLITUDE_2, -1))
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.am0hz)
+            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+            hapticGenerator.enabled = true
+            mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                hapticGenerator.release()
+                hapticGenerator.close()
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
+
+//            vibrator?.vibrate(
+//                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_1, WAVEFORM_AMPLITUDES_1, -1))
         }
 
         view.findViewById<View>(R.id.e1b2).setOnClickListener {
-//            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.audacity_300hz_amp0_5_1000ms)
-//            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
-//            hapticGenerator.enabled = true
-//            mediaPlayer.start()
-//            mediaPlayer.setOnCompletionListener {
-//                hapticGenerator.release()
-//                hapticGenerator.close()
-//                mediaPlayer?.release()
-//                mediaPlayer = null
-//            }
-            vibrator?.vibrate(
-                VibrationEffect.createWaveform(WAVEFORM_DURATION_2, WAVEFORM_AMPLITUDE_2, -1))
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.am20hz)
+            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+            hapticGenerator.enabled = true
+            mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                hapticGenerator.release()
+                hapticGenerator.close()
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
+
+//            vibrator?.vibrate(
+//                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_2, WAVEFORM_AMPLITUDES_2, -1))
         }
 
         view.findViewById<View>(R.id.e1b3).setOnClickListener {
-//            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.audacity_300hz_amp1_1000ms)
-//            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
-//            hapticGenerator.enabled = true
-//            mediaPlayer.start()
-//            mediaPlayer.setOnCompletionListener {
-//                hapticGenerator.release()
-//                hapticGenerator.close()
-//                mediaPlayer?.release()
-//                mediaPlayer = null
-//            }
-            vibrator?.vibrate(
-                VibrationEffect.createWaveform(WAVEFORM_DURATION_3, WAVEFORM_AMPLITUDE_2, -1))
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.am50hz)
+            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+            hapticGenerator.enabled = true
+            mediaPlayer.start()
+            mediaPlayer.setOnCompletionListener {
+                hapticGenerator.release()
+                hapticGenerator.close()
+                mediaPlayer?.release()
+                mediaPlayer = null
+            }
+
+//            vibrator?.vibrate(
+//                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_3, WAVEFORM_AMPLITUDES_3, -1))
         }
 
         view.findViewById<RadioButton>(R.id.radio_button_high_1).setOnClickListener(View.OnClickListener {
