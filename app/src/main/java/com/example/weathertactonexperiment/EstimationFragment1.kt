@@ -100,41 +100,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b1).setOnClickListener {
-//            val minBufferSize = AudioTrack.getMinBufferSize(
-//                44100, AudioFormat.CHANNEL_OUT_MONO,
-//                AudioFormat.ENCODING_PCM_16BIT
-//            )
-//
-//            val player = AudioTrack.Builder()
-//                .setAudioAttributes(
-//                    AudioAttributes.Builder()
-//                        .setUsage(AudioAttributes.USAGE_ALARM)
-//                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-//                        .build()
-//                )
-//                .setAudioFormat(
-//                    AudioFormat.Builder()
-//                        .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
-//                        .setSampleRate(44100)
-//                        .setChannelMask(AudioFormat.CHANNEL_OUT_MONO)
-//                        .build()
-//                )
-//                .setBufferSizeInBytes(minBufferSize)
-//                .build()
-//
-//            player.play()
-//            var i = 0
-//            val bufferSize = 512
-//            var buffer = ByteArray(bufferSize)
-//            val inputStream: InputStream = requireContext().resources.openRawResource(R.raw.am0hz)
-//            i = inputStream.read(buffer)
-//            while(i != -1){
-//                player.write(buffer, 0, i)
-//                i = inputStream.read(buffer)
-//            }
-//            inputStream.close()
-
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.am0hz)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -150,7 +116,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b2).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.am20hz)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -166,7 +132,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b3).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.am50hz)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg300hz100db)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
