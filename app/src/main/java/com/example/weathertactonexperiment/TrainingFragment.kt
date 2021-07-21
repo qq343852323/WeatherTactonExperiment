@@ -7,6 +7,7 @@ import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -55,7 +56,7 @@ class TrainingFragment : Fragment() {
         }
 
 
-        view.findViewById<View>(R.id.training_vibration_button1).setOnClickListener {
+        view.findViewById<Button>(R.id.training_vibration_button1).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
@@ -68,7 +69,7 @@ class TrainingFragment : Fragment() {
             }
         }
 
-        view.findViewById<View>(R.id.training_vibration_button2).setOnClickListener {
+        view.findViewById<Button>(R.id.training_vibration_button2).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
@@ -81,7 +82,7 @@ class TrainingFragment : Fragment() {
             }
         }
 
-        view.findViewById<View>(R.id.training_vibration_button3).setOnClickListener {
+        view.findViewById<Button>(R.id.training_vibration_button3).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
@@ -130,7 +131,7 @@ class TrainingFragment : Fragment() {
             v3 = 3
         })
 
-        view.findViewById<View>(R.id.training_submit_button).setOnClickListener {
+        view.findViewById<Button>(R.id.training_submit_button).setOnClickListener {
             if(!(v1==1 || v1==2 || v1==3)
                 || !(v2==1 || v2==2 || v2==3)
                 || !(v3==1 || v3==2 || v3==3)

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import java.io.File
 
 class StartFragment : Fragment() {
@@ -22,17 +23,12 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
-        File(downloadFolder?.path + File.separator + "data.txt").appendText(
-            "participant1" + "\n"
-        )
-        File(downloadFolder?.path + File.separator + "random.txt").appendText(
-            "1" + "\n" + "2" + "\n" + "3" + "\n"
-        )
-
-        val button = view.findViewById<Button>(R.id.start_training_button)
-        button?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.training_dest, null)
-        )
+//        val button = view.findViewById<Button>(R.id.start_training_button)
+//        button?.setOnClickListener(
+//            Navigation.createNavigateOnClickListener(R.id.training_dest, null)
+//        )
+        view.findViewById<Button>(R.id.start_training_button).setOnClickListener {
+            findNavController().navigate(R.id.training_dest)
+        }
     }
 }
