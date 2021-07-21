@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context="com.example.weathertactonexperiment.TrainingFragment">
+
+
+    <TextView
+        android:id="@+id/training_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/training_vibration_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="false"
+        android:soundEffectsEnabled="false"
+        android:text="vibration1" />
+
+    <Button
+        android:id="@+id/training_vibration_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="false"
+        android:soundEffectsEnabled="false"
+        android:text="vibration2" />
+
+    <Button
+        android:id="@+id/training_vibration_button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="false"
+        android:soundEffectsEnabled="false"
+        android:text="vibration3" />
+
+
+    <TextView
+        android:id="@+id/training_question_level1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/training_radio_group_level1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level1_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level1_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level1_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/training_question_level2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/training_radio_group_level2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level2_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level2_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level2_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/training_question_level3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/training_radio_group_level3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level3_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level3_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/training_radio_group_level3_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/training_submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit and next" />
+
+    <TextView
+        android:id="@+id/training_warnmsg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="#F10101"
+        android:textSize="20sp" />
+
+</LinearLayout>

@@ -12,10 +12,9 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import java.io.File
-import java.io.InputStream
 
 
-class EstimationFragment1 : Fragment() {
+class EstimationFragment : Fragment() {
 
     var v1: Int = 0
     var v2: Int = 0
@@ -27,7 +26,7 @@ class EstimationFragment1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.estimation_fragment1, container, false)
+        return inflater.inflate(R.layout.estimation_fragment, container, false)
 //        val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 //        if(!File(downloadFolder?.path + File.separator + "random.txt").exists()){
 //            return inflater.inflate(R.layout.end_fragment, container, false)
@@ -132,7 +131,7 @@ class EstimationFragment1 : Fragment() {
         }
 
         view.findViewById<View>(R.id.e1b3).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.ffmpeg300hz100db)
+            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
             mediaPlayer.start()
@@ -252,7 +251,7 @@ class EstimationFragment1 : Fragment() {
                 if(lines.size == 1){
                     findNavController().navigate(R.id.end_dest)
                 }else{
-                    findNavController().navigate(R.id.estimation1_dest)
+                    findNavController().navigate(R.id.estimation_dest)
                 }
             }
         }

@@ -30,9 +30,9 @@ class StartFragment : Fragment() {
             "1" + "\n" + "2" + "\n" + "3" + "\n"
         )
 
-        val button = view.findViewById<Button>(R.id.start_button)
+        val button = view.findViewById<Button>(R.id.start_training_button)
         button?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.estimation1_dest, null)
+            Navigation.createNavigateOnClickListener(R.id.training_dest, null)
         )
     }
 }

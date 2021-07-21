@@ -11,20 +11,20 @@
         android:label="start_fragment"
         tools:layout="@layout/start_fragment" />
     <fragment
-        android:id="@+id/estimation1_dest"
-        android:name="com.example.weathertactonexperiment.EstimationFragment1"
-        android:label="estimation_fragment1"
-        tools:layout="@layout/estimation_fragment1" />
+        android:id="@+id/training_dest"
+        android:name="com.example.weathertactonexperiment.TrainingFragment"
+        android:label="training_fragment"
+        tools:layout="@layout/training_fragment" />
     <fragment
-        android:id="@+id/estimation2_dest"
-        android:name="com.example.weathertactonexperiment.EstimationFragment2"
-        android:label="estimation_fragment2"
-        tools:layout="@layout/estimation_fragment2" />
+        android:id="@+id/betweenTrainingEstimation_dest"
+        android:name="com.example.weathertactonexperiment.BetweenTrainingEstimationFragment"
+        android:label="between_training_estimation_fragment"
+        tools:layout="@layout/between_training_estimation_fragment" />
     <fragment
-        android:id="@+id/estimation3_dest"
-        android:name="com.example.weathertactonexperiment.EstimationFragment3"
-        android:label="estimation_fragment3"
-        tools:layout="@layout/estimation_fragment3" />
+        android:id="@+id/estimation_dest"
+        android:name="com.example.weathertactonexperiment.EstimationFragment"
+        android:label="estimation_fragment"
+        tools:layout="@layout/estimation_fragment" />
     <fragment
         android:id="@+id/end_dest"
         android:name="com.example.weathertactonexperiment.EndFragment"

@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">WeatherTactonExperiment</string>
-    <string name="high_temperature">Which vibration represents high temperature?</string>
-    <string name="medium_temperature">Which vibration represents medium temperature?</string>
-    <string name="low_temperature">Which vibration represents low temperature?</string>
-    <string name="textview">TextView</string>
-    <string-array name="levels_array">
-        <item>High</item>
-        <item>Medium</item>
-        <item>Low</item>
-    </string-array>
+    <string name="question_high_temperature">Which vibration represents high temperature?</string>
+    <string name="question_medium_temperature">Which vibration represents medium temperature?</string>
+    <string name="question_low_temperature">Which vibration represents low temperature?</string>
+    <string name="question_strong_wind">Which vibration represents strong wind?</string>
+    <string name="question_medium_wind">Which vibration represents medium wind?</string>
+    <string name="question_light_wind">Which vibration represents light wind?</string>
+    <string name="question_heavy_rain">Which vibration represents heavy rain?</string>
+    <string name="question_medium_rain">Which vibration represents medium rain?</string>
+    <string name="question_light_rain">Which vibration represents light rain?</string>
 </resources>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="com.example.weathertactonexperiment.EstimationFragment1">
+    tools:context="com.example.weathertactonexperiment.EstimationFragment">
 
 
     <TextView
@@ -47,7 +47,6 @@
         android:id="@+id/textView_high"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/high_temperature"
         android:textSize="16sp" />
 
     <RadioGroup
@@ -81,7 +80,6 @@
         android:id="@+id/textView_medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/medium_temperature"
         android:textSize="16sp" />
 
     <RadioGroup
@@ -115,7 +113,6 @@
         android:id="@+id/textView_low"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/low_temperature"
         android:textSize="16sp" />
 
     <RadioGroup
