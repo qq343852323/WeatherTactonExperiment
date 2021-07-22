@@ -25,7 +25,6 @@ class EstimationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.estimation_fragment, container, false)
 //        val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 //        if(!File(downloadFolder?.path + File.separator + "random.txt").exists()){
@@ -40,41 +39,41 @@ class EstimationFragment : Fragment() {
 
 //        view.findViewById<TextView>(R.id.e1_warnmsg).text = v1.toString()
 
-        val vibrator = activity?.getSystemService(Vibrator::class.java)
-        val WAVEFORM_DURATION_1 = longArrayOf(100)
-        val WAVEFORM_DURATION_2 = longArrayOf(500)
-        val WAVEFORM_DURATION_3 = longArrayOf(1000)
-        val WAVEFORM_AMPLITUDE_1 = intArrayOf(64)
-        val WAVEFORM_AMPLITUDE_2 = intArrayOf(128)
-        val WAVEFORM_AMPLITUDE_3 = intArrayOf(255)
-        val WAVEFORM_TIMINGS_1 = longArrayOf(
-            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
-            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
-            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
-            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
-            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
-            50, 15, 50, 15, 50, 15, 50, 15, 50, 15, 50)
-        val WAVEFORM_TIMINGS_2 = longArrayOf(
-            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
-            50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
-        val WAVEFORM_TIMINGS_3 = longArrayOf(50, 800, 50, 800, 50, 250)
-        val WAVEFORM_TIMINGS_4 = longArrayOf(50, 100, 50, 100, 50, 100, 50, 100, 50, 100)
-        val WAVEFORM_TIMINGS_5 = longArrayOf(50, 200, 50, 200, 50, 200, 50, 200, 50, 200)
-        val WAVEFORM_AMPLITUDES_1 = intArrayOf(
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0, 128)
-        val WAVEFORM_AMPLITUDES_2 = intArrayOf(
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
-            128, 0, 128, 0, 128, 0, 128, 0, 128, 0)
-        val WAVEFORM_AMPLITUDES_3 = intArrayOf(128, 0, 128, 0, 128, 0)
+//        val vibrator = activity?.getSystemService(Vibrator::class.java)
+//        val WAVEFORM_DURATION_1 = longArrayOf(100)
+//        val WAVEFORM_DURATION_2 = longArrayOf(500)
+//        val WAVEFORM_DURATION_3 = longArrayOf(1000)
+//        val WAVEFORM_AMPLITUDE_1 = intArrayOf(64)
+//        val WAVEFORM_AMPLITUDE_2 = intArrayOf(128)
+//        val WAVEFORM_AMPLITUDE_3 = intArrayOf(255)
+//        val WAVEFORM_TIMINGS_1 = longArrayOf(
+//            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+//            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+//            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+//            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+//            50, 15, 50, 15, 50, 15, 50, 15, 50, 15,
+//            50, 15, 50, 15, 50, 15, 50, 15, 50, 15, 50)
+//        val WAVEFORM_TIMINGS_2 = longArrayOf(
+//            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+//            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+//            50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+//            50, 50, 50, 50, 50, 50, 50, 50, 50, 50)
+//        val WAVEFORM_TIMINGS_3 = longArrayOf(50, 800, 50, 800, 50, 250)
+//        val WAVEFORM_TIMINGS_4 = longArrayOf(50, 100, 50, 100, 50, 100, 50, 100, 50, 100)
+//        val WAVEFORM_TIMINGS_5 = longArrayOf(50, 200, 50, 200, 50, 200, 50, 200, 50, 200)
+//        val WAVEFORM_AMPLITUDES_1 = intArrayOf(
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0, 128)
+//        val WAVEFORM_AMPLITUDES_2 = intArrayOf(
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0,
+//            128, 0, 128, 0, 128, 0, 128, 0, 128, 0)
+//        val WAVEFORM_AMPLITUDES_3 = intArrayOf(128, 0, 128, 0, 128, 0)
 
         val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
 //        if(!File(downloadFolder?.path + File.separator + "random.txt").exists()){
@@ -89,16 +88,25 @@ class EstimationFragment : Fragment() {
         }
 
         if(num == 1){
-            view.findViewById<TextView>(R.id.e1_title).text = "Temperature"
+            view.findViewById<TextView>(R.id.estimation_title).text = "Temperature"
+            view.findViewById<TextView>(R.id.estimation_question_level1).text = "Which vibration represents high temperature?"
+            view.findViewById<TextView>(R.id.estimation_question_level2).text = "Which vibration represents medium temperature?"
+            view.findViewById<TextView>(R.id.estimation_question_level3).text = "Which vibration represents low temperature?"
         }
         if(num == 2){
-            view.findViewById<TextView>(R.id.e1_title).text = "Wind"
+            view.findViewById<TextView>(R.id.estimation_title).text = "Wind"
+            view.findViewById<TextView>(R.id.estimation_question_level1).text = "Which vibration represents strong wind?"
+            view.findViewById<TextView>(R.id.estimation_question_level2).text = "Which vibration represents medium wind?"
+            view.findViewById<TextView>(R.id.estimation_question_level3).text = "Which vibration represents light wind?"
         }
         if(num == 3){
-            view.findViewById<TextView>(R.id.e1_title).text = "Rain"
+            view.findViewById<TextView>(R.id.estimation_title).text = "Rain"
+            view.findViewById<TextView>(R.id.estimation_question_level1).text = "Which vibration represents heavy rain?"
+            view.findViewById<TextView>(R.id.estimation_question_level2).text = "Which vibration represents medium rain?"
+            view.findViewById<TextView>(R.id.estimation_question_level3).text = "Which vibration represents light rain?"
         }
 
-        view.findViewById<View>(R.id.e1b1).setOnClickListener {
+        view.findViewById<View>(R.id.estimation_vibration_button1).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
@@ -114,7 +122,7 @@ class EstimationFragment : Fragment() {
 //                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_1, WAVEFORM_AMPLITUDES_1, -1))
         }
 
-        view.findViewById<View>(R.id.e1b2).setOnClickListener {
+        view.findViewById<View>(R.id.estimation_vibration_button2).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
@@ -130,7 +138,7 @@ class EstimationFragment : Fragment() {
 //                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_2, WAVEFORM_AMPLITUDES_2, -1))
         }
 
-        view.findViewById<View>(R.id.e1b3).setOnClickListener {
+        view.findViewById<View>(R.id.estimation_vibration_button3).setOnClickListener {
             var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
             var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
             hapticGenerator.enabled = true
@@ -146,39 +154,39 @@ class EstimationFragment : Fragment() {
 //                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_3, WAVEFORM_AMPLITUDES_3, -1))
         }
 
-        view.findViewById<RadioButton>(R.id.radio_button_high_1).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level1_button1).setOnClickListener(View.OnClickListener {
             v1 = 1
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_high_2).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level1_button2).setOnClickListener(View.OnClickListener {
             v1 = 2
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_high_3).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level1_button3).setOnClickListener(View.OnClickListener {
             v1 = 3
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_medium_1).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level2_button1).setOnClickListener(View.OnClickListener {
             v2 = 1
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_medium_2).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level2_button2).setOnClickListener(View.OnClickListener {
             v2 = 2
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_medium_3).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level2_button3).setOnClickListener(View.OnClickListener {
             v2 = 3
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_low_1).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level3_button1).setOnClickListener(View.OnClickListener {
             v3 = 1
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_low_2).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level3_button2).setOnClickListener(View.OnClickListener {
             v3 = 2
         })
 
-        view.findViewById<RadioButton>(R.id.radio_button_low_3).setOnClickListener(View.OnClickListener {
+        view.findViewById<RadioButton>(R.id.estimation_radio_group_level3_button3).setOnClickListener(View.OnClickListener {
             v3 = 3
         })
 
@@ -223,7 +231,7 @@ class EstimationFragment : Fragment() {
 //            }
 //        }
 
-        view.findViewById<View>(R.id.e1_submit_button).setOnClickListener {
+        view.findViewById<View>(R.id.estimation_submit_button).setOnClickListener {
 //            val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 //            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 
@@ -243,7 +251,7 @@ class EstimationFragment : Fragment() {
                 || !(v2==1 || v2==2 || v2==3)
                 || !(v3==1 || v3==2 || v3==3)
                 || v1 == v2 || v1 == v3 || v2 == v3){
-                view.findViewById<TextView>(R.id.e1_warnmsg).text = "Invalid input"
+                view.findViewById<TextView>(R.id.estimation_warnmsg).text = "Invalid input"
             }else{
                 File(downloadFolder?.path + File.separator + "data.txt").appendText(
                     v1.toString() + "-" + v2.toString() + "-" + v3.toString() + "\n"

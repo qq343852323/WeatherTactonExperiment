@@ -11,15 +11,14 @@
 
 
     <TextView
-        android:id="@+id/e1_title"
+        android:id="@+id/estimation_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Temperature"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/e1b1"
+        android:id="@+id/estimation_vibration_button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hapticFeedbackEnabled="false"
@@ -27,7 +26,7 @@
         android:text="vibration1" />
 
     <Button
-        android:id="@+id/e1b2"
+        android:id="@+id/estimation_vibration_button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hapticFeedbackEnabled="false"
@@ -35,7 +34,7 @@
         android:text="vibration2" />
 
     <Button
-        android:id="@+id/e1b3"
+        android:id="@+id/estimation_vibration_button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hapticFeedbackEnabled="false"
@@ -44,112 +43,112 @@
 
 
     <TextView
-        android:id="@+id/textView_high"
+        android:id="@+id/estimation_question_level1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
     <RadioGroup
-        android:id="@+id/radio_group_high"
+        android:id="@+id/estimation_radio_group_level1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio_button_high_1"
+            android:id="@+id/estimation_radio_group_level1_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="1" />
 
         <RadioButton
-            android:id="@+id/radio_button_high_2"
+            android:id="@+id/estimation_radio_group_level1_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="2" />
 
         <RadioButton
-            android:id="@+id/radio_button_high_3"
+            android:id="@+id/estimation_radio_group_level1_button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView_medium"
+        android:id="@+id/estimation_question_level2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
     <RadioGroup
-        android:id="@+id/radio_group_medium"
+        android:id="@+id/estimation_radio_group_level2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio_button_medium_1"
+            android:id="@+id/estimation_radio_group_level2_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="1" />
 
         <RadioButton
-            android:id="@+id/radio_button_medium_2"
+            android:id="@+id/estimation_radio_group_level2_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="2" />
 
         <RadioButton
-            android:id="@+id/radio_button_medium_3"
+            android:id="@+id/estimation_radio_group_level2_button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView_low"
+        android:id="@+id/estimation_question_level3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
     <RadioGroup
-        android:id="@+id/radio_group_low"
+        android:id="@+id/estimation_radio_group_level3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio_button_low_1"
+            android:id="@+id/estimation_radio_group_level3_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="1" />
 
         <RadioButton
-            android:id="@+id/radio_button_low_2"
+            android:id="@+id/estimation_radio_group_level3_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:text="2" />
 
         <RadioButton
-            android:id="@+id/radio_button_low_3"
+            android:id="@+id/estimation_radio_group_level3_button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/e1_submit_button"
+        android:id="@+id/estimation_submit_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="submit and next" />
 
     <TextView
-        android:id="@+id/e1_warnmsg"
+        android:id="@+id/estimation_warnmsg"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:textColor="#F10101"
