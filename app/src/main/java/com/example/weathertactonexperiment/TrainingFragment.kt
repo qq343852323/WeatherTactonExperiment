@@ -39,30 +39,30 @@ class TrainingFragment : Fragment() {
         var weather = arr.get(0)
         if(weather == 0){
             view.findViewById<TextView>(R.id.training_title).text = "Temperature"
-            view.findViewById<TextView>(R.id.training_question_level1).text = "Which vibration represents high temperature?"
-            view.findViewById<TextView>(R.id.training_question_level2).text = "Which vibration represents medium temperature?"
-            view.findViewById<TextView>(R.id.training_question_level3).text = "Which vibration represents low temperature?"
+            view.findViewById<TextView>(R.id.training_question_level1).text = getString(R.string.question_high_temperature)
+            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_medium_temperature)
+            view.findViewById<TextView>(R.id.training_question_level3).text = getString(R.string.question_low_temperature)
         }
         if(weather == 1){
             view.findViewById<TextView>(R.id.training_title).text = "Wind"
-            view.findViewById<TextView>(R.id.training_question_level1).text = "Which vibration represents strong wind?"
-            view.findViewById<TextView>(R.id.training_question_level2).text = "Which vibration represents medium wind?"
-            view.findViewById<TextView>(R.id.training_question_level3).text = "Which vibration represents light wind?"
+            view.findViewById<TextView>(R.id.training_question_level1).text = getString(R.string.question_strong_wind)
+            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_medium_wind)
+            view.findViewById<TextView>(R.id.training_question_level3).text = getString(R.string.question_light_wind)
         }
         if(weather == 2){
             view.findViewById<TextView>(R.id.training_title).text = "Rain"
-            view.findViewById<TextView>(R.id.training_question_level1).text = "Which vibration represents heavy rain?"
-            view.findViewById<TextView>(R.id.training_question_level2).text = "Which vibration represents medium rain?"
-            view.findViewById<TextView>(R.id.training_question_level3).text = "Which vibration represents light rain?"
+            view.findViewById<TextView>(R.id.training_question_level1).text = getString(R.string.question_heavy_rain)
+            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_medium_rain)
+            view.findViewById<TextView>(R.id.training_question_level3).text = getString(R.string.question_light_rain)
         }
 
         arr.shuffle()
-        var vibration_type = arr.get(0)
+        var vibrationtype = arr.get(0)
 
         arr.shuffle()
 
         view.findViewById<Button>(R.id.training_vibration_button1).setOnClickListener {
-            if(vibration_type == 0){
+            if(vibrationtype == 0){
                 if(arr.get(0) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -100,7 +100,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
             }
-            if(vibration_type == 1){
+            if(vibrationtype == 1){
                 if(arr.get(0) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -138,7 +138,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
             }
-            if(vibration_type == 2){
+            if(vibrationtype == 2){
                 if(arr.get(0) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -179,7 +179,7 @@ class TrainingFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.training_vibration_button2).setOnClickListener {
-            if(vibration_type == 0){
+            if(vibrationtype == 0){
                 if(arr.get(1) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -217,7 +217,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
             }
-            if(vibration_type == 1){
+            if(vibrationtype == 1){
                 if(arr.get(1) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -255,7 +255,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
             }
-            if(vibration_type == 2){
+            if(vibrationtype == 2){
                 if(arr.get(1) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -296,7 +296,7 @@ class TrainingFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.training_vibration_button3).setOnClickListener {
-            if(vibration_type == 0){
+            if(vibrationtype == 0){
                 if(arr.get(2) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -334,7 +334,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
             }
-            if(vibration_type == 1){
+            if(vibrationtype == 1){
                 if(arr.get(2) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -372,7 +372,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
             }
-            if(vibration_type == 2){
+            if(vibrationtype == 2){
                 if(arr.get(2) == 0) {
                     var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
@@ -453,7 +453,7 @@ class TrainingFragment : Fragment() {
                 || !(v2==1 || v2==2 || v2==3)
                 || !(v3==1 || v3==2 || v3==3)
                 || v1 == v2 || v1 == v3 || v2 == v3){
-                view.findViewById<TextView>(R.id.training_warnmsg).text = "Invalid input"
+                view.findViewById<TextView>(R.id.training_warnmsg).text = getString(R.string.warnmsg)
             }else{
                 findNavController().navigate(R.id.betweenTrainingEstimation_dest)
             }

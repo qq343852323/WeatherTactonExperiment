@@ -9,4 +9,5 @@
     <string name="question_heavy_rain">Which vibration represents heavy rain?</string>
     <string name="question_medium_rain">Which vibration represents medium rain?</string>
     <string name="question_light_rain">Which vibration represents light rain?</string>
+    <string name="warnmsg">Invalid input</string>
 </resources>
