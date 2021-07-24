@@ -126,7 +126,7 @@
         android:id="@+id/start_training_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="do some training" />
+        android:text="start training" />
 
     <TextView
         android:id="@+id/start_warnmsg"
