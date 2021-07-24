@@ -69,13 +69,26 @@
         android:text="What is your age?"
         android:textSize="16sp" />
 
-
-    <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="50dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText_age"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/years"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=" years" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/question_weatherappusage"
