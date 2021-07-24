@@ -89,21 +89,21 @@ class EstimationFragment : Fragment() {
 
         if(num == 1){
             view.findViewById<TextView>(R.id.estimation_title).text = "Temperature"
-            view.findViewById<TextView>(R.id.estimation_question_level1).text = "Which vibration represents high temperature?"
-            view.findViewById<TextView>(R.id.estimation_question_level2).text = "Which vibration represents medium temperature?"
-            view.findViewById<TextView>(R.id.estimation_question_level3).text = "Which vibration represents low temperature?"
+            view.findViewById<TextView>(R.id.estimation_question_level1).text = getString(R.string.question_high_temperature)
+            view.findViewById<TextView>(R.id.estimation_question_level2).text = getString(R.string.question_medium_temperature)
+            view.findViewById<TextView>(R.id.estimation_question_level3).text = getString(R.string.question_low_temperature)
         }
         if(num == 2){
             view.findViewById<TextView>(R.id.estimation_title).text = "Wind"
-            view.findViewById<TextView>(R.id.estimation_question_level1).text = "Which vibration represents strong wind?"
-            view.findViewById<TextView>(R.id.estimation_question_level2).text = "Which vibration represents medium wind?"
-            view.findViewById<TextView>(R.id.estimation_question_level3).text = "Which vibration represents light wind?"
+            view.findViewById<TextView>(R.id.estimation_question_level1).text = getString(R.string.question_strong_wind)
+            view.findViewById<TextView>(R.id.estimation_question_level2).text = getString(R.string.question_moderate_wind)
+            view.findViewById<TextView>(R.id.estimation_question_level3).text = getString(R.string.question_light_wind)
         }
         if(num == 3){
             view.findViewById<TextView>(R.id.estimation_title).text = "Rain"
-            view.findViewById<TextView>(R.id.estimation_question_level1).text = "Which vibration represents heavy rain?"
-            view.findViewById<TextView>(R.id.estimation_question_level2).text = "Which vibration represents medium rain?"
-            view.findViewById<TextView>(R.id.estimation_question_level3).text = "Which vibration represents light rain?"
+            view.findViewById<TextView>(R.id.estimation_question_level1).text = getString(R.string.question_heavy_rain)
+            view.findViewById<TextView>(R.id.estimation_question_level2).text = getString(R.string.question_moderate_rain)
+            view.findViewById<TextView>(R.id.estimation_question_level3).text = getString(R.string.question_light_rain)
         }
 
         view.findViewById<View>(R.id.estimation_vibration_button1).setOnClickListener {
@@ -251,7 +251,7 @@ class EstimationFragment : Fragment() {
                 || !(v2==1 || v2==2 || v2==3)
                 || !(v3==1 || v3==2 || v3==3)
                 || v1 == v2 || v1 == v3 || v2 == v3){
-                view.findViewById<TextView>(R.id.estimation_warnmsg).text = "Invalid input"
+                view.findViewById<TextView>(R.id.estimation_warnmsg).text = getString(R.string.warnmsg)
             }else{
                 File(downloadFolder?.path + File.separator + "data.txt").appendText(
                     v1.toString() + "-" + v2.toString() + "-" + v3.toString() + "\n"

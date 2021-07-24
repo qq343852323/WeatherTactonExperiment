@@ -1,19 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
     tools:context="com.example.weathertactonexperiment.StartFragment">
+
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the experiment!"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/question_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To which gender identity do you most identify?"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_button_gender_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/radio_button_gender_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radio_button_gender_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Others" />
+
+        <RadioButton
+            android:id="@+id/radio_button_gender_nottosay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prefer Not to Answer" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/question_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What is your age?"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/question_weatherappusage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How often do you use weather apps?"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_weatherappusage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_button_weatherappusage_level1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Everyday" />
+
+        <RadioButton
+            android:id="@+id/radio_button_weatherappusage_level2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-6 times per week" />
+
+        <RadioButton
+            android:id="@+id/radio_button_weatherappusage_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Less than 3 times per week" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/start_training_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do some training"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="do some training" />
+
+    <TextView
+        android:id="@+id/start_warnmsg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="#F10101"
+        android:textSize="20sp" />
+
+</LinearLayout>

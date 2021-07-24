@@ -46,13 +46,13 @@ class TrainingFragment : Fragment() {
         if(weather == 1){
             view.findViewById<TextView>(R.id.training_title).text = "Wind"
             view.findViewById<TextView>(R.id.training_question_level1).text = getString(R.string.question_strong_wind)
-            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_medium_wind)
+            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_moderate_wind)
             view.findViewById<TextView>(R.id.training_question_level3).text = getString(R.string.question_light_wind)
         }
         if(weather == 2){
             view.findViewById<TextView>(R.id.training_title).text = "Rain"
             view.findViewById<TextView>(R.id.training_question_level1).text = getString(R.string.question_heavy_rain)
-            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_medium_rain)
+            view.findViewById<TextView>(R.id.training_question_level2).text = getString(R.string.question_moderate_rain)
             view.findViewById<TextView>(R.id.training_question_level3).text = getString(R.string.question_light_rain)
         }
 
