@@ -83,76 +83,382 @@ class EstimationFragment : Fragment() {
 
         var lines = File(downloadFolder?.path + File.separator + "random.txt").readLines()
         var num = lines.get(0).toInt()
-//        File(downloadFolder?.path + File.separator + "random.txt").delete()
-//        for(i in 2..lines.size){
-//            File(downloadFolder?.path + File.separator + "random.txt").appendText(lines.get(i-1) + "\n")
-//        }
+        File(downloadFolder?.path + File.separator + "random.txt").delete()
+        for(i in 2..lines.size){
+            File(downloadFolder?.path + File.separator + "random.txt").appendText(lines.get(i-1) + "\n")
+        }
 
-        if(num == 1){
+        if(num/9 == 0){
             view.findViewById<TextView>(R.id.estimation_title).text = "Temperature"
             view.findViewById<TextView>(R.id.estimation_question_level1).text = getString(R.string.question_high_temperature)
             view.findViewById<TextView>(R.id.estimation_question_level2).text = getString(R.string.question_medium_temperature)
             view.findViewById<TextView>(R.id.estimation_question_level3).text = getString(R.string.question_low_temperature)
         }
-        if(num == 2){
+        if(num/9 == 1){
             view.findViewById<TextView>(R.id.estimation_title).text = "Wind"
             view.findViewById<TextView>(R.id.estimation_question_level1).text = getString(R.string.question_strong_wind)
             view.findViewById<TextView>(R.id.estimation_question_level2).text = getString(R.string.question_moderate_wind)
             view.findViewById<TextView>(R.id.estimation_question_level3).text = getString(R.string.question_light_wind)
         }
-        if(num == 3){
+        if(num/9 == 2){
             view.findViewById<TextView>(R.id.estimation_title).text = "Rain"
             view.findViewById<TextView>(R.id.estimation_question_level1).text = getString(R.string.question_heavy_rain)
             view.findViewById<TextView>(R.id.estimation_question_level2).text = getString(R.string.question_moderate_rain)
             view.findViewById<TextView>(R.id.estimation_question_level3).text = getString(R.string.question_light_rain)
         }
 
-        view.findViewById<View>(R.id.estimation_vibration_button1).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
-            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
-            hapticGenerator.enabled = true
-            mediaPlayer.start()
-            mediaPlayer.setOnCompletionListener {
-                hapticGenerator.release()
-                hapticGenerator.close()
-                mediaPlayer?.release()
-                mediaPlayer = null
-            }
+        val arr = Array(3) { it }
+        arr.shuffle()
 
-//            vibrator?.vibrate(
-//                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_1, WAVEFORM_AMPLITUDES_1, -1))
+        view.findViewById<View>(R.id.estimation_vibration_button1).setOnClickListener {
+            if(num%9 == 0 || num%9 == 1 || num%9 == 2){
+                if(arr.get(0) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(0) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(0) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
+            if(num%9 == 3 || num%9 == 4 || num%9 == 5){
+                if(arr.get(0) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(0) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(0) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
+            if(num%9 == 6 || num%9 == 7 || num%9 == 8){
+                if(arr.get(0) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(0) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(0) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
         }
 
         view.findViewById<View>(R.id.estimation_vibration_button2).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
-            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
-            hapticGenerator.enabled = true
-            mediaPlayer.start()
-            mediaPlayer.setOnCompletionListener {
-                hapticGenerator.release()
-                hapticGenerator.close()
-                mediaPlayer?.release()
-                mediaPlayer = null
+            if(num%9 == 0 || num%9 == 1 || num%9 == 2){
+                if(arr.get(1) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(1) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(1) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
             }
-
-//            vibrator?.vibrate(
-//                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_2, WAVEFORM_AMPLITUDES_2, -1))
+            if(num%9 == 3 || num%9 == 4 || num%9 == 5){
+                if(arr.get(1) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(1) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(1) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
+            if(num%9 == 6 || num%9 == 7 || num%9 == 8){
+                if(arr.get(1) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(1) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(1) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
         }
 
         view.findViewById<View>(R.id.estimation_vibration_button3).setOnClickListener {
-            var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
-            var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
-            hapticGenerator.enabled = true
-            mediaPlayer.start()
-            mediaPlayer.setOnCompletionListener {
-                hapticGenerator.release()
-                hapticGenerator.close()
-                mediaPlayer?.release()
-                mediaPlayer = null
+            if(num%9 == 0 || num%9 == 1 || num%9 == 2){
+                if(arr.get(2) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(2) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(2) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
             }
-
-//            vibrator?.vibrate(
-//                VibrationEffect.createWaveform(WAVEFORM_TIMINGS_3, WAVEFORM_AMPLITUDES_3, -1))
+            if(num%9 == 3 || num%9 == 4 || num%9 == 5){
+                if(arr.get(2) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(2) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(2) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
+            if(num%9 == 6 || num%9 == 7 || num%9 == 8){
+                if(arr.get(2) == 0) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(2) == 1) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+                if(arr.get(2) == 2) {
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp0_5)
+                    var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
+                    hapticGenerator.enabled = true
+                    mediaPlayer.start()
+                    mediaPlayer.setOnCompletionListener {
+                        hapticGenerator.release()
+                        hapticGenerator.close()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                }
+            }
         }
 
         view.findViewById<RadioButton>(R.id.estimation_radio_group_level1_button1).setOnClickListener(View.OnClickListener {
@@ -255,7 +561,9 @@ class EstimationFragment : Fragment() {
                 view.findViewById<TextView>(R.id.estimation_warnmsg).text = getString(R.string.warnmsg)
             }else{
                 File(downloadFolder?.path + File.separator + "data.txt").appendText(
-                    v1.toString() + "-" + v2.toString() + "-" + v3.toString() + "\n"
+                    num.toString() + "\n"
+                            + arr.get(0) + "-" + arr.get(1) + "-" + arr.get(2) + "\n"
+                            + v1.toString() + "-" + v2.toString() + "-" + v3.toString() + "\n"
                 )
                 if(lines.size == 1){
                     findNavController().navigate(R.id.end_dest)

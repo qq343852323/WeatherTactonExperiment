@@ -31,6 +31,11 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        var num = 8
+//        if(num/9 == 0){
+//            view.findViewById<TextView>(R.id.welcome_text).text = "aaaaa"
+//        }
+
         view.findViewById<RadioButton>(R.id.radio_button_gender_female).setOnClickListener(View.OnClickListener {
             v_gender = 1
         })
