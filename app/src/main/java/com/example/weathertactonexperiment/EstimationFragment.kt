@@ -80,12 +80,13 @@ class EstimationFragment : Fragment() {
 //            findNavController().navigate(R.id.end_dest)
 //            Navigation.createNavigateOnClickListener(R.id.end_dest, null)
 //        }
+
         var lines = File(downloadFolder?.path + File.separator + "random.txt").readLines()
         var num = lines.get(0).toInt()
-        File(downloadFolder?.path + File.separator + "random.txt").delete()
-        for(i in 2..lines.size){
-            File(downloadFolder?.path + File.separator + "random.txt").appendText(lines.get(i-1) + "\n")
-        }
+//        File(downloadFolder?.path + File.separator + "random.txt").delete()
+//        for(i in 2..lines.size){
+//            File(downloadFolder?.path + File.separator + "random.txt").appendText(lines.get(i-1) + "\n")
+//        }
 
         if(num == 1){
             view.findViewById<TextView>(R.id.estimation_title).text = "Temperature"

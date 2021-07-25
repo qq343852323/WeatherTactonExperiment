@@ -70,7 +70,7 @@ class StartFragment : Fragment() {
                 val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
                 File(downloadFolder?.path + File.separator + "data.txt").appendText(
                     "----------" + "\n" +
-                    v_gender.toString() + view.findViewById<EditText>(R.id.editText_age).text.toString() + v_usage.toString() + "\n"
+                    v_gender.toString() + "-" + view.findViewById<EditText>(R.id.editText_age).text.toString() + "-" + v_usage.toString() + "\n"
                 )
                 findNavController().navigate(R.id.training_dest)
             }

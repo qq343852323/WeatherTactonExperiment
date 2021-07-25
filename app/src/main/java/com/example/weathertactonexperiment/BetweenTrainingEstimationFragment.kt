@@ -28,10 +28,14 @@ class BetweenTrainingEstimationFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.start_experiment_button).setOnClickListener {
+            val arr = Array(27) { it }
+            arr.shuffle()
             val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
-            File(downloadFolder?.path + File.separator + "random.txt").appendText(
-                "1" + "\n" + "2" + "\n" + "3" + "\n"
-            )
+            for(i in 0..26){
+                File(downloadFolder?.path + File.separator + "random.txt").appendText(
+                    arr.get(i).toString() + "\n"
+                )
+            }
             findNavController().navigate(R.id.estimation_dest)
         }
     }
