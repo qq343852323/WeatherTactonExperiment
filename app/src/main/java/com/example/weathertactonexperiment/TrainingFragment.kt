@@ -64,7 +64,7 @@ class TrainingFragment : Fragment() {
         view.findViewById<Button>(R.id.training_vibration_button1).setOnClickListener {
             if(vibrationtype == 0){
                 if(arr.get(0) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -76,7 +76,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(0) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -88,7 +88,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(0) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -102,7 +102,7 @@ class TrainingFragment : Fragment() {
             }
             if(vibrationtype == 1){
                 if(arr.get(0) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off15dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -114,7 +114,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(0) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off50dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -126,7 +126,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(0) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off800dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -140,7 +140,7 @@ class TrainingFragment : Fragment() {
             }
             if(vibrationtype == 2){
                 if(arr.get(0) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -152,7 +152,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(0) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -164,7 +164,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(0) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -181,7 +181,7 @@ class TrainingFragment : Fragment() {
         view.findViewById<Button>(R.id.training_vibration_button2).setOnClickListener {
             if(vibrationtype == 0){
                 if(arr.get(1) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -193,7 +193,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(1) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -205,7 +205,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(1) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -219,7 +219,7 @@ class TrainingFragment : Fragment() {
             }
             if(vibrationtype == 1){
                 if(arr.get(1) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off15dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -231,7 +231,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(1) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off50dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -243,7 +243,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(1) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off800dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -257,7 +257,7 @@ class TrainingFragment : Fragment() {
             }
             if(vibrationtype == 2){
                 if(arr.get(1) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -269,7 +269,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(1) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -281,7 +281,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(1) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -298,7 +298,7 @@ class TrainingFragment : Fragment() {
         view.findViewById<Button>(R.id.training_vibration_button3).setOnClickListener {
             if(vibrationtype == 0){
                 if(arr.get(2) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam0hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -310,7 +310,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(2) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam20hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -322,7 +322,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(2) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msam50hzamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -336,7 +336,7 @@ class TrainingFragment : Fragment() {
             }
             if(vibrationtype == 1){
                 if(arr.get(2) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off15dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off15dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -348,7 +348,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(2) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off50dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off50dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -360,7 +360,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(2) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp0_5on50off800dur2s)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msamp1on50off800dur2s)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -374,7 +374,7 @@ class TrainingFragment : Fragment() {
             }
             if(vibrationtype == 2){
                 if(arr.get(2) == 0) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur100msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -386,7 +386,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(2) == 1) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur500msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
@@ -398,7 +398,7 @@ class TrainingFragment : Fragment() {
                     }
                 }
                 if(arr.get(2) == 2) {
-                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp0_5)
+                    var mediaPlayer = MediaPlayer.create(requireContext(), R.raw.silence200msdur1000msamp1)
                     var hapticGenerator = HapticGenerator.create(mediaPlayer.audioSessionId)
                     hapticGenerator.enabled = true
                     mediaPlayer.start()
