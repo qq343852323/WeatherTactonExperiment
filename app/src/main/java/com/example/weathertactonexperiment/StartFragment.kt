@@ -69,7 +69,7 @@ class StartFragment : Fragment() {
 //            Navigation.createNavigateOnClickListener(R.id.training_dest, null)
 //        )
         view.findViewById<Button>(R.id.start_training_button).setOnClickListener {
-            if(v_gender == 0 || v_usage == 0){
+            if(v_gender == 0 || v_usage == 0 || view.findViewById<EditText>(R.id.editText_age).text.toString().equals("")){
                 view.findViewById<TextView>(R.id.start_warnmsg).text = getString(R.string.start_warnmsg)
             }else{
                 val downloadFolder = requireContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
