@@ -17,7 +17,6 @@ import java.io.File
 class StartFragment : Fragment() {
 
     var v_gender: Int = 0
-    var v_age: Int = 0
     var v_usage: Int = 0
 
     override fun onCreateView(
