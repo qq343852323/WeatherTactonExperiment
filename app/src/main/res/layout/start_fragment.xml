@@ -107,19 +107,19 @@
             android:id="@+id/radio_button_weatherappusage_level1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Everyday" />
+            android:text="At least once a day" />
 
         <RadioButton
             android:id="@+id/radio_button_weatherappusage_level2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3-6 times per week" />
+            android:text="At least once a week" />
 
         <RadioButton
             android:id="@+id/radio_button_weatherappusage_level3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Less than 3 times per week" />
+            android:text="Rarely or never" />
     </RadioGroup>
 
     <Button
